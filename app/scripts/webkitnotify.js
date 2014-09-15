@@ -52,3 +52,15 @@ document.getElementById("sample-with-custom-body").addEventListener("click", fun
 		var note6 = new Notification("With HTML5 icon and..", {icon: "./images/icon.jpg", body: "..a custom body string!"});
 	}
 });
+
+/*
+* A sample with request permission.
+*
+*/
+document.getElementById("sample-require").addEventListener("click", function () {
+  Notification.requestPermission(function (status) {
+    if (Notification.permission !== status) {
+      Notification.permission = status;
+    }
+  });
+});
